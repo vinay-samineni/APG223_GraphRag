@@ -1,0 +1,28 @@
+[project]
+name = "apg223-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Vinay Samineni", email = "saminenivinay999@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=3.6.1",
+    "langchain-text-splitters>=1.2.0",
+    "networkx>=3.7",
+    "numpy>=2.5.5",
+    "pinecone>=10.3.0",
+    "pydantic>=2.14.4",
+    "pymupdf>=2.1",
+    "python-dotenv>=1.2.4",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=6.3.0",
+]
+
+[project.scripts]
+apg223-rag = "apg223_rag:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"

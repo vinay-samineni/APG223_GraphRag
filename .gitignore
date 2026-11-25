@@ -1,0 +1,18 @@
+# Secrets & Environment
+.env
+
+# Virtual Environment & Python Caches
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# macOS & Editor Artifacts
+.DS_Store
+.cursor/
+.vscode/
+
+# Generated Local Indexes (reproducible via uv run ingest.py)
+data/processed/*.pkl

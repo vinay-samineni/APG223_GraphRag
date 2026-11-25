@@ -1,0 +1,700 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d3" for="edge" attr.name="relation" attr.type="string" />
+  <key id="d2" for="node" attr.name="section" attr.type="string" />
+  <key id="d1" for="node" attr.name="label" attr.type="string" />
+  <key id="d0" for="node" attr.name="node_type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="About this guide">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P001">
+      <data key="d0">Subsection</data>
+      <data key="d1">About this guide - Introduction</data>
+      <data key="d2">About this guide</data>
+    </node>
+    <node id="CPS 220">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="CPS 510">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="CPG 220">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="APS 220">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="LVR">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="LMI">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="HEM">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="HPI">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Override">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Interest-Only">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Reverse Mortgage">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="HELOC">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="SMSF">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="NIS">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Background">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P002">
+      <data key="d0">Subsection</data>
+      <data key="d1">Background - Introduction</data>
+      <data key="d2">Background</data>
+    </node>
+    <node id="Hardship">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Risk management framework">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P003">
+      <data key="d0">Subsection</data>
+      <data key="d1">Risk management framework - Introduction</data>
+      <data key="d2">Risk management framework</data>
+    </node>
+    <node id="APRA’s expectations of an ADI Board for residential mortgage lending">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P004">
+      <data key="d0">Subsection</data>
+      <data key="d1">APRA’s expectations of an ADI Board for residential mortgage lending - Introduction</data>
+      <data key="d2">APRA’s expectations of an ADI Board for residential mortgage lending</data>
+    </node>
+    <node id="Risk appetite including residential mortgage lending">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P005">
+      <data key="d0">Subsection</data>
+      <data key="d1">Risk appetite including residential mortgage lending - Introduction</data>
+      <data key="d2">Risk appetite including residential mortgage lending</data>
+    </node>
+    <node id="Loan-To-Valuation Ratio">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Lenders Mortgage Insurance">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Serviceability">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Overrides">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Guarantor">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Broker">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Oversight and review">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P006">
+      <data key="d0">Subsection</data>
+      <data key="d1">Oversight and review - Introduction</data>
+      <data key="d2">Oversight and review</data>
+    </node>
+    <node id="Management information systems">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P007">
+      <data key="d0">Subsection</data>
+      <data key="d1">Management information systems - Introduction</data>
+      <data key="d2">Management information systems</data>
+    </node>
+    <node id="Remuneration">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P008">
+      <data key="d0">Subsection</data>
+      <data key="d1">Remuneration - Introduction</data>
+      <data key="d2">Remuneration</data>
+    </node>
+    <node id="Loan origination">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P009">
+      <data key="d0">Subsection</data>
+      <data key="d1">Loan origination - Introduction</data>
+      <data key="d2">Loan origination</data>
+    </node>
+    <node id="Serviceability assessments">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P010">
+      <data key="d0">Subsection</data>
+      <data key="d1">Serviceability assessments - Introduction</data>
+      <data key="d2">Serviceability assessments</data>
+    </node>
+    <node id="Assessment and verification of income, living expenses and other debt commitments">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P011">
+      <data key="d0">Subsection</data>
+      <data key="d1">Assessment and verification of income, living expenses and other debt commitments - Introduction</data>
+      <data key="d2">Assessment and verification of income, living expenses and other debt commitments</data>
+    </node>
+    <node id="P012">
+      <data key="d0">Subsection</data>
+      <data key="d1">Overrides - Introduction</data>
+      <data key="d2">Overrides</data>
+    </node>
+    <node id="APS 112">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="Treatment of Higher Education Loan Program (HELP) debt obligations">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P013">
+      <data key="d0">Subsection</data>
+      <data key="d1">Treatment of Higher Education Loan Program (HELP) debt obligations - Introduction</data>
+      <data key="d2">Treatment of Higher Education Loan Program (HELP) debt obligations</data>
+    </node>
+    <node id="HELP">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Other expectations with respect to loan origination by third parties">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P014">
+      <data key="d0">Subsection</data>
+      <data key="d1">Other expectations with respect to loan origination by third parties - Introduction</data>
+      <data key="d2">Other expectations with respect to loan origination by third parties</data>
+    </node>
+    <node id="CPS 231">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="Scorecard approvals">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P015">
+      <data key="d0">Subsection</data>
+      <data key="d1">Scorecard approvals - Introduction</data>
+      <data key="d2">Scorecard approvals</data>
+    </node>
+    <node id="Specific loan types">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P016">
+      <data key="d0">Subsection</data>
+      <data key="d1">Specific loan types - Introduction</data>
+      <data key="d2">Specific loan types</data>
+    </node>
+    <node id="Interest-only loans">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P017">
+      <data key="d0">Subsection</data>
+      <data key="d1">Interest-only loans - Introduction</data>
+      <data key="d2">Interest-only loans</data>
+    </node>
+    <node id="Foreign currency loans">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P018">
+      <data key="d0">Subsection</data>
+      <data key="d1">Foreign currency loans - Introduction</data>
+      <data key="d2">Foreign currency loans</data>
+    </node>
+    <node id="Loans with non-standard/alternative documentation">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P019">
+      <data key="d0">Subsection</data>
+      <data key="d1">Loans with non-standard/alternative documentation - Introduction</data>
+      <data key="d2">Loans with non-standard/alternative documentation</data>
+    </node>
+    <node id="Reverse mortgages">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P020">
+      <data key="d0">Subsection</data>
+      <data key="d1">Reverse mortgages - Introduction</data>
+      <data key="d2">Reverse mortgages</data>
+    </node>
+    <node id="Home equity lines-of-credit">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P021">
+      <data key="d0">Subsection</data>
+      <data key="d1">Home equity lines-of-credit - Introduction</data>
+      <data key="d2">Home equity lines-of-credit</data>
+    </node>
+    <node id="Loans to self-managed superannuation funds">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P022">
+      <data key="d0">Subsection</data>
+      <data key="d1">Loans to self-managed superannuation funds - Introduction</data>
+      <data key="d2">Loans to self-managed superannuation funds</data>
+    </node>
+    <node id="Security valuation">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P023">
+      <data key="d0">Subsection</data>
+      <data key="d1">Security valuation - Introduction</data>
+      <data key="d2">Security valuation</data>
+    </node>
+    <node id="Valuation methods">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P024">
+      <data key="d0">Subsection</data>
+      <data key="d1">Valuation methods - Introduction</data>
+      <data key="d2">Valuation methods</data>
+    </node>
+    <node id="Loan-to-valuation ratios">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P025">
+      <data key="d0">Subsection</data>
+      <data key="d1">Loan-to-valuation ratios - Introduction</data>
+      <data key="d2">Loan-to-valuation ratios</data>
+    </node>
+    <node id="Guarantors">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P026">
+      <data key="d0">Subsection</data>
+      <data key="d1">Guarantors - Introduction</data>
+      <data key="d2">Guarantors</data>
+    </node>
+    <node id="Hardship loans and collections">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P027">
+      <data key="d0">Subsection</data>
+      <data key="d1">Hardship loans and collections - Introduction</data>
+      <data key="d2">Hardship loans and collections</data>
+    </node>
+    <node id="Stress testing">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P028">
+      <data key="d0">Subsection</data>
+      <data key="d1">Stress testing - Introduction</data>
+      <data key="d2">Stress testing</data>
+    </node>
+    <node id="APS 110">
+      <data key="d0">PrudentialStandard</data>
+    </node>
+    <node id="Stress Testing">
+      <data key="d0">RegulatoryConcept</data>
+    </node>
+    <node id="Lenders mortgage insurance">
+      <data key="d0">Section</data>
+    </node>
+    <node id="P029">
+      <data key="d0">Subsection</data>
+      <data key="d1">Lenders mortgage insurance - Introduction</data>
+      <data key="d2">Lenders mortgage insurance</data>
+    </node>
+    <edge source="About this guide" target="P001">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P001" target="CPS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P001" target="CPS 510">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P001" target="CPG 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P001" target="APS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P001" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="LMI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="HEM">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="HPI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="Interest-Only">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="Reverse Mortgage">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="HELOC">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="SMSF">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P001" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Background" target="P002">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P002" target="Hardship">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Risk management framework" target="P003">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P003" target="CPS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="APRA’s expectations of an ADI Board for residential mortgage lending" target="P004">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="Risk appetite including residential mortgage lending" target="P005">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P005" target="CPS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P005" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Loan-To-Valuation Ratio">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="LMI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Lenders Mortgage Insurance">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Overrides">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Interest-Only">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Reverse Mortgage">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="HELOC">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="SMSF">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Guarantor">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P005" target="Broker">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Overrides" target="P012">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="Oversight and review" target="P006">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P006" target="CPS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P006" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P006" target="Overrides">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Management information systems" target="P007">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P007" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P007" target="LMI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P007" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P007" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P007" target="Overrides">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P007" target="Hardship">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P007" target="Broker">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Remuneration" target="P008">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P008" target="CPS 510">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P008" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P008" target="Broker">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P008" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Loan origination" target="P009">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P009" target="Broker">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P009" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Serviceability assessments" target="P010">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P010" target="APS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P010" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P010" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P010" target="Interest-Only">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P010" target="Hardship">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P010" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Assessment and verification of income, living expenses and other debt commitments" target="P011">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P011" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P011" target="HEM">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P011" target="HPI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P012" target="APS 112">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P012" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P012" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P012" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P012" target="Overrides">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P012" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Treatment of Higher Education Loan Program (HELP) debt obligations" target="P013">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P013" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P013" target="HELP">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P013" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P013" target="Overrides">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Other expectations with respect to loan origination by third parties" target="P014">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P014" target="CPS 231">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P014" target="Broker">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P014" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Scorecard approvals" target="P015">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P015" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Specific loan types" target="P016">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P016" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P016" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Interest-only loans" target="P017">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P017" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P017" target="Interest-Only">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Foreign currency loans" target="P018">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="Loans with non-standard/alternative documentation" target="P019">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P019" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P019" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Reverse mortgages" target="P020">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P020" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P020" target="Reverse Mortgage">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Home equity lines-of-credit" target="P021">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P021" target="HELOC">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Loans to self-managed superannuation funds" target="P022">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P022" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P022" target="SMSF">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Security valuation" target="P023">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="Valuation methods" target="P024">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P024" target="APS 220">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P024" target="HEM">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P024" target="Override">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Loan-to-valuation ratios" target="P025">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P025" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P025" target="LMI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P025" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P025" target="HELP">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P025" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Guarantors" target="P026">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P026" target="Guarantor">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Hardship loans and collections" target="P027">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P027" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P027" target="Interest-Only">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P027" target="Hardship">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P027" target="NIS">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Stress testing" target="P028">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P028" target="APS 110">
+      <data key="d3">REFERENCES_STANDARD</data>
+    </edge>
+    <edge source="P028" target="LVR">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P028" target="LMI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P028" target="Serviceability">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="P028" target="Stress Testing">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+    <edge source="Lenders mortgage insurance" target="P029">
+      <data key="d3">CONTAINS_SUBSECTION</data>
+    </edge>
+    <edge source="P029" target="LMI">
+      <data key="d3">ADDRESSES_CONCEPT</data>
+    </edge>
+  </graph>
+</graphml>
