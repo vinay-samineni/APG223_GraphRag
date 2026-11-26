@@ -1,6 +1,6 @@
 import re
 import numpy as np
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from apg223_rag.config import (
@@ -12,33 +12,42 @@ from apg223_rag.config import (
 
 
 def _split_sentences(text: str) -> List[str]:
-    sentences = re.split(r'(?<!\d)(?<!\b[A-Z])\.(?!\d)\s+(?=[A-Z0-9])', text)
-    return [s.strip() if s.endswith(".") else f"{s.strip()}." for s in sentences if s.strip()]
+    parts = re.split(r"(?<!\d)(?<!\b[A-Z])(?<=[.?!])\s+(?=[A-Z0-9])", text)
+    return [s.strip() for s in parts if s.strip()]
+
+
+def _locate_span_metadata(chunk_text: str, parent: Dict[str, Any]) -> Tuple[int, List[float]]:
+    spans = parent.get("block_spans", [])
+    if not spans:
+        return parent["page_start"], []
+
+    pos = parent["content"].find(chunk_text[:80])
+    if pos == -1:
+        return spans[0]["page"], spans[0]["bbox"]
+
+    for sp in spans:
+        if sp["start_char"] <= pos <= sp["end_char"]:
+            return sp["page"], sp["bbox"]
+
+    return spans[-1]["page"], spans[-1]["bbox"]
 
 
 def build_child_chunks(
     parents: List[Dict[str, Any]],
     tables: List[Dict[str, Any]],
-    embed_model: SentenceTransformer | None = None
+    embed_model: SentenceTransformer | None = None,
 ) -> List[Dict[str, Any]]:
-    """
-    1. Splits Parent prose into sentences and detects semantic topic shifts via BGE cosine similarity.
-    2. Applies RecursiveCharacterTextSplitter (1500 chars, 200 overlap) to oversized semantic groups.
-    3. Converts isolated tables into dedicated table child chunks without slicing rows.
-    """
     model = embed_model or SentenceTransformer(EMBED_MODEL_NAME)
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=MAX_CHILD_CHARS,
         chunk_overlap=CHUNK_OVERLAP_CHARS,
-        separators=["\n\n", "\n", ". ", " ", ""]
+        separators=["\n\n", "\n", ". ", " ", ""],
     )
 
     children: List[Dict[str, Any]] = []
     chunk_counter = 1
 
-    # 1. Prose Semantic + Recursive Chunking
     for parent in parents:
-        # Exclude appended [Table ...] block from prose chunking since tables are handled separately
         prose_only = parent["content"].split("\n\n[Table ")[0]
         sentences = _split_sentences(prose_only)
         if not sentences:
@@ -70,15 +79,7 @@ def build_child_chunks(
                 final_texts.append(grp)
 
         for c_text in final_texts:
-            matched_page = parent["page_start"]
-            matched_bbox = parent["blocks"][0]["bbox"] if parent["blocks"] else []
-            prefix = c_text[:35]
-            for blk in parent["blocks"]:
-                if prefix in blk["text"]:
-                    matched_page = blk["page"]
-                    matched_bbox = blk["bbox"]
-                    break
-
+            matched_page, matched_bbox = _locate_span_metadata(c_text, parent)
             children.append({
                 "chunk_id": f"C{chunk_counter:03d}",
                 "chunk_type": "text",
@@ -87,21 +88,22 @@ def build_child_chunks(
                 "subsection": parent["subsection"],
                 "page": matched_page,
                 "bbox": matched_bbox,
-                "content": c_text
+                "content": c_text,
             })
             chunk_counter += 1
 
-    # 2. Dedicated Table Child Chunks
     for tbl in tables:
+        if "parent_id" not in tbl:
+            continue
         children.append({
             "chunk_id": f"C{chunk_counter:03d}",
             "chunk_type": "table",
-            "parent_id": tbl.get("parent_id", "P001"),
-            "section": tbl.get("section", "General"),
-            "subsection": tbl.get("subsection", "Overview"),
+            "parent_id": tbl["parent_id"],
+            "section": tbl["section"],
+            "subsection": tbl["subsection"],
             "page": tbl["page"],
             "bbox": tbl["bbox"],
-            "content": tbl["content"]
+            "content": tbl["content"],
         })
         chunk_counter += 1
 

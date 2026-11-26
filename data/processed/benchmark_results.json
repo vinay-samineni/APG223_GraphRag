@@ -1,0 +1,357 @@
+{
+  "summary": {
+    "total_questions": 15,
+    "hits": 14,
+    "hit_at_3_pct": 93.3,
+    "avg_faithfulness": 5.0,
+    "avg_relevance": 5.0,
+    "avg_precision": 4.67,
+    "avg_latency_s": 14.49
+  },
+  "results": [
+    {
+      "id": "Q01",
+      "category": "Governance & Board",
+      "question": "How often must an ADI's residential mortgage risk management framework be independently reviewed under CPS 220?",
+      "expected_subsection": "Oversight and review",
+      "expected_paragraph": "Paragraph 12 (at least every three years)",
+      "retrieval_hit": false,
+      "retrieved_parents": [
+        "P003 (Risk management framework - Introduction)",
+        "P001 (About this guide - Introduction)"
+      ],
+      "graph_triples": [
+        "(About this guide - Introduction [P001]) --[REFERENCES_STANDARD]--> (CPS 220)",
+        "(Risk management framework - Introduction [P003]) --[REFERENCES_STANDARD]--> (CPS 220)"
+      ],
+      "answer": "Based on the provided APG 223 text and Knowledge Graph relationships, there is no mention of the specific *frequency* or schedule with which an ADI's residential mortgage risk management framework must be independently reviewed under CPS 220. \n\nThe text only notes that where residential mortgage lending forms a material proportion of an ADI's lending portfolio, it is prudent for the Board and senior management to specifically address residential mortgage lending within their risk management framework (including the risk appetite statement, risk management strategy, and business plans), consistent with Prudential Standard CPS 220 (Paragraph 3).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 1,
+      "judge_reasoning": "The generated answer correctly identifies that the provided context does not contain information about the specific frequency for independently reviewing the risk management framework under CPS 220. The faithfulness and relevance are high because it accurately reflects the limitations of the text. Context precision is low because the retrieved snippets lack the specific regulatory rule regarding review frequency.",
+      "latency_s": 8.54
+    },
+    {
+      "id": "Q02",
+      "category": "Remuneration & Brokers",
+      "question": "What controls should an ADI apply to mortgage broker commission structures under CPS 510?",
+      "expected_subsection": "Remuneration",
+      "expected_paragraph": "Paragraphs 17-20 (clawback provisions, monitoring broker defaults)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P008 (Remuneration - Introduction)",
+        "P014 (Other expectations with respect to loan origination by third parties - Introduction)",
+        "P001 (About this guide - Introduction)"
+      ],
+      "graph_triples": [
+        "(About this guide - Introduction [P001]) --[REFERENCES_STANDARD]--> (CPS 510)",
+        "(Remuneration - Introduction [P008]) --[REFERENCES_STANDARD]--> (CPS 510)",
+        "(Remuneration - Introduction [P008]) --[ADDRESSES_CONCEPT]--> (Broker)",
+        "(Other expectations with respect to loan origination by third parties - Introduction [P014]) --[ADDRESSES_CONCEPT]--> (Broker)"
+      ],
+      "answer": "Based on APG 223 and Prudential Standard CPS 510, where an ADI's residential mortgage lending portfolio is material, a prudent ADI should apply its remuneration policy to persons involved in residential mortgage lending, including mortgage broker firms responsible for originating a material proportion of the portfolio (Paragraph 008). \n\nTo ensure that commission-based compensation does not create adverse incentives, a prudent ADI should apply the following controls and measures regarding broker commission structures:\n\n* **Incentive Alignment and Conflict Management:** Ensure that incentive arrangements discourage conflicts of interest and inappropriate behavior, recognising the incentives and potential risks inherent in the remuneration structure (Paragraph 008).\n* **Clawback Provisions:** Consider appropriate clawback provisions as part of the compensation measures (Paragraph 008).\n* **Monitoring and Controls:** Maintain appropriate monitoring and controls to guard against incentives that encourage loans with:\n  * Inadequate or false verification\n  * Marginal serviceability\n  * Excessive leverage\n  * Unsuitable terms for a borrower (Paragraph 008).\n* **Performance Tracking:** Closely monitor performance at the broker firm or individual broker level, and take measures\u2014such as restricting or terminating relationships\u2014if loans originated by a broker show unexpectedly elevated levels of default or materially deficient loan documentation and processing (Paragraph 008). \n\nAlternatively, an ADI may address these remuneration arrangements within its risk management framework with appropriate senior management or Board oversight (Paragraph 008).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer accurately reflects the provided context, completely addresses the question regarding controls on mortgage broker commission structures under CPS 510, and relies on retrieved sections that contain the exact necessary regulatory rules.",
+      "latency_s": 7.28
+    },
+    {
+      "id": "Q03",
+      "category": "Serviceability (Multi-Hop)",
+      "question": "What minimum interest rate buffer does Attachment C of APS 220 require, and how are honeymoon rates treated?",
+      "expected_subsection": "Serviceability assessments",
+      "expected_paragraph": "Paragraph 32 (at least 3.0 per cent, ignoring honeymoon rates)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P010_1 (Serviceability assessments - Introduction)",
+        "P001 (About this guide - Introduction)"
+      ],
+      "graph_triples": [
+        "(About this guide - Introduction [P001]) --[REFERENCES_STANDARD]--> (APS 220)",
+        "(Serviceability assessments - Introduction [P010_1]) --[REFERENCES_STANDARD]--> (APS 220)"
+      ],
+      "answer": "Based on APG 223 (specifically referenced in [P010_1]), under Attachment C of Prudential Standard APS 220 *Credit Risk Management*:\n\n* **Minimum Interest Rate Buffer:** ADIs must apply a buffer over a loan\u2019s interest rate of **at least 3.0 per cent**, unless determined otherwise by APRA ([P010_1]).\n* **Treatment of Honeymoon Rates:** The buffer must be applied to the interest rate on the loan to be paid by the borrower, **ignoring any discounted introductory or honeymoon rates** offered for a limited period at the origination of the loan ([P010_1]).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer accurately extracts the minimum interest rate buffer of at least 3.0 percent and correctly explains that honeymoon rates are ignored, both of which are explicitly stated in Attachment C of APS 220 within the retrieved context. The context contains the exact required regulatory rules.",
+      "latency_s": 8.91
+    },
+    {
+      "id": "Q04",
+      "category": "Serviceability & Revolving Debt",
+      "question": "What monthly repayment rate does APG 223 give as an example for assessing credit card or revolving debt limits?",
+      "expected_subsection": "Serviceability assessments",
+      "expected_paragraph": "Paragraph 35 (3 per cent per month on total committed limit)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P010_1 (Serviceability assessments - Introduction)",
+        "P021 (Home equity lines-of-credit - Introduction)"
+      ],
+      "graph_triples": [],
+      "answer": "Based on APG 223 (Serviceability assessments > Serviceability assessments - Introduction), an ADI may assess a borrower\u2019s repayment obligation for credit card or other revolving personal debt using a rate of **three per cent per month** on the total committed limit for such facilities.",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The retrieved context contains the exact example of a three per cent per month repayment rate for credit card or revolving personal debt limits. The answer accurately extracts this information and completely addresses the prompt.",
+      "latency_s": 11.34
+    },
+    {
+      "id": "Q05",
+      "category": "Income & Living Expenses",
+      "question": "What minimum haircut should be applied to non-salary and expected rental income, and how should HEM or HPI be used?",
+      "expected_subsection": "Assessment and verification of income, living expenses and other debt commitments",
+      "expected_paragraph": "Paragraphs 39, 43-44 (at least 20% discount; greater of declared expenses or scaled HEM/HPI)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P012_2 (Assessment and verification of income, living expenses and other debt commitments - Introduction)",
+        "P011_1 (Assessment and verification of income, living expenses and other debt commitments - Introduction)"
+      ],
+      "graph_triples": [
+        "(Assessment and verification of income, living expenses and other debt commitments - Introduction [P012_2]) --[ADDRESSES_CONCEPT]--> (HEM)",
+        "(Assessment and verification of income, living expenses and other debt commitments - Introduction [P012_2]) --[ADDRESSES_CONCEPT]--> (HPI)"
+      ],
+      "answer": "Based on APG 223, the requirements for haircuts on income and the use of the Household Expenditure Measure (HEM) or Henderson Poverty Index (HPI) are as follows:\n\n* **Minimum Haircut on Non-Salary and Expected Rental Income:** \n  * Prudent practice is to apply discounts (haircuts) of **at least 20 per cent** on most types of non-salary income (Paragraph 31).\n  * Similarly, APRA views prudent serviceability policies as incorporating a **minimum haircut of 20 per cent** on expected rental income, with larger haircuts applied where there is a higher risk of non-occupancy (Paragraph 32).\n\n* **Use of HEM or HPI:** \n  * ADIs typically use the Household Expenditure Measure (HEM) or the Henderson Poverty Index (HPI) in loan calculators to estimate a borrower\u2019s living expenses (Paragraph 32).\n  * Because these indices might not always be an appropriate proxy for a borrower's actual living expenses, relying solely on them generally does not meet APRA\u2019s requirements for sound risk management (Paragraph 32). \n  * APRA expects ADIs to use the **greater of a borrower\u2019s declared living expenses or an appropriately scaled version of the HEM or HPI indices** (Paragraph 32). Specifically, if HEM or HPI is used, a prudent ADI should apply a margin linked to the borrower\u2019s income to the index, and update these indices frequently (at least in line with published quarterly updates) (Paragraph 32).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer accurately and completely extracts the minimum 20 percent haircut for both non-salary and expected rental income, and correctly explains how HEM or HPI should be used (greater of declared expenses or scaled HEM/HPI with a margin, updated frequently). All claims are strictly supported by the provided context and directly address the user's question.",
+      "latency_s": 8.3
+    },
+    {
+      "id": "Q06",
+      "category": "Overrides & Capital",
+      "question": "When is a loan classified as an override, and which prudential standard governs its capital treatment?",
+      "expected_subsection": "Overrides",
+      "expected_paragraph": "Paragraphs 47-52 (NIS < $0 or waivers; APS 112)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P012 (Overrides - Introduction)",
+        "P025_2 (Valuation methods - Introduction)",
+        "P005 (Risk appetite including residential mortgage lending - Introduction)"
+      ],
+      "graph_triples": [
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (Override)",
+        "(Overrides - Introduction [P012]) --[ADDRESSES_CONCEPT]--> (Override)",
+        "(Valuation methods - Introduction [P025_2]) --[ADDRESSES_CONCEPT]--> (Override)"
+      ],
+      "answer": "Based on APG 223 and the retrieved text:\n\n**Classification as an Override:**\nA loan is classified as an override when a residential mortgage loan is approved outside an ADI\u2019s loan serviceability criteria or other lending policy parameters or guidelines (Paragraph 12). Specifically, this includes:\n* Loans where the borrower is assessed to have a net income surplus of less than $0 (even if temporary) (Paragraph 12).\n* Loans where exceptions to minimum serviceability requirements have been granted, such as waivers on income verification (Paragraph 12).\n* ADIs may also include other types of loans (such as those outside Loan-to-Valuation Ratio [LVR] limits) as overrides for internal risk monitoring purposes based on their own definitions (Paragraph 12).\n\n**Capital Treatment:**\nAPRA expects an ADI to have appropriate processes in place to determine whether loans approved through overrides to internal policy are treated as standard or non-standard loans for capital purposes under **Prudential Standard APS 112 Capital Adequacy: Standardised Approach to Credit Risk** (Paragraph 12).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer accurately and completely addresses both parts of the user question using only information from the provided context. It correctly identifies the definition of an override and specifies Prudential Standard APS 112 for capital treatment.",
+      "latency_s": 8.92
+    },
+    {
+      "id": "Q07",
+      "category": "HELP Debt (Multi-Hop)",
+      "question": "Under what condition can an ADI exclude HELP debt repayments from a serviceability assessment?",
+      "expected_subsection": "Treatment of Higher Education Loan Program (HELP) debt obligations",
+      "expected_paragraph": "Paragraph 55 (expected to pay off HELP debt within 12 months)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P013 (Treatment of Higher Education Loan Program (HELP) debt obligations - Introduction)",
+        "P010_1 (Serviceability assessments - Introduction)",
+        "P005 (Risk appetite including residential mortgage lending - Introduction)"
+      ],
+      "graph_triples": [
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (Serviceability)",
+        "(Serviceability assessments - Introduction [P010_1]) --[ADDRESSES_CONCEPT]--> (Serviceability)",
+        "(Treatment of Higher Education Loan Program (HELP) debt obligations - Introduction [P013]) --[ADDRESSES_CONCEPT]--> (Serviceability)",
+        "(Treatment of Higher Education Loan Program (HELP) debt obligations - Introduction [P013]) --[ADDRESSES_CONCEPT]--> (HELP)"
+      ],
+      "answer": "Under APG 223, an ADI may consider it reasonable to remove Higher Education Loan Program (HELP) repayments from a serviceability assessment under the condition that **the borrower is expected to pay off their HELP debt within 12 months** through the compulsory repayments deducted from gross income (**Paragraph 13**). \n\nThis loan serviceability override must be determined in accordance with the ADI's lending policies and risk appetite, taking into account the individual circumstances of the borrower and on the basis that the borrower will be largely unaffected by HELP repayments over the remaining term of their mortgage (**Paragraph 13**).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer accurately extracts the exact condition from the context (borrower expected to pay off HELP debt within 12 months) and directly addresses the user's question using the provided regulatory context.",
+      "latency_s": 6.25
+    },
+    {
+      "id": "Q08",
+      "category": "Third-Party Origination",
+      "question": "What obligations apply under CPS 231 when income verification or lending authority is delegated to third parties?",
+      "expected_subsection": "Other expectations with respect to loan origination by third parties",
+      "expected_paragraph": "Paragraphs 56-59 (ADI retains risk/responsibility, periodic testing, timely cessation)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P014 (Other expectations with respect to loan origination by third parties - Introduction)",
+        "P008 (Remuneration - Introduction)"
+      ],
+      "graph_triples": [
+        "(Other expectations with respect to loan origination by third parties - Introduction [P014]) --[REFERENCES_STANDARD]--> (CPS 231)"
+      ],
+      "answer": "Based on APG 223 and Prudential Standard CPS 231 *Outsourcing* (*CPS 231*):\n\n* **Retention of Risk and Responsibility:** An ADI retains both the risk and responsibility for material outsourced functions, which includes the origination and ongoing management of residential mortgage lending ([P014]).\n* **Delegation of Lending Authority:** Where lending authority is delegated to third parties, the ADI must implement robust mechanisms to ensure the delegation is appropriate, subject to senior management oversight, and that adherence to policies and procedures is regularly audited ([P014]). This oversight extends to third parties granted any form of delegation of lending authority (DLA), even if approval abilities are within policy limits ([P014]).\n* **Income Verification and Oversight:** While it is considered good practice for the ADI rather than a third party to perform income verification, if a third party performs this role, the ADI is expected to implement appropriate oversight processes covering income verification ([P014]). Sound oversight and appropriate procedures are also necessary to verify the accuracy and completeness of information provided when third parties accept or complete applications ([P014]).\n* **Monitoring and Testing:** An ADI must periodically monitor and test the integrity of third-party approval and verification processes, either directly or through operationally independent persons ([P014]).\n* **Termination of Arrangements:** Consistent with *CPS 231*, a prudent ADI must ensure that its arrangements with third-party residential mortgage loan originators allow for the timely cessation of such arrangements if the ADI forms the view that it can no longer place reliance on the third party ([P014]).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer is entirely faithful to the provided context, accurately citing P014 for all claims regarding income verification and delegated lending authority under CPS 231. It directly and completely answers the user's question, addressing both income verification and lending authority delegations. The retrieved context (specifically P014) contains the exact regulatory expectations and rules needed to answer the question thoroughly.",
+      "latency_s": 48.49
+    },
+    {
+      "id": "Q09",
+      "category": "Scorecards & Models",
+      "question": "Why should an ADI avoid relying solely on a scorecard vendor to validate its credit scoring model?",
+      "expected_subsection": "Scorecard approvals",
+      "expected_paragraph": "Paragraph 62 (material conflict of interest; use independent third-party assessor)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P015 (Scorecard approvals - Introduction)",
+        "P029 (Lenders mortgage insurance - Introduction)"
+      ],
+      "graph_triples": [],
+      "answer": "Based on the provided guidance in APG 223, an ADI should avoid relying solely on a scorecard or model vendor for validation services because it can create a material conflict of interest that the ADI needs to manage ([P015]). To mitigate this potential conflict of interest, it is considered prudent to seek an independent third-party assessor ([P015]).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer directly addresses the question using exact details from the retrieved context, specifically noting the material conflict of interest and the need for an independent third-party assessor. The context perfectly covers the exact regulatory rules needed.",
+      "latency_s": 26.58
+    },
+    {
+      "id": "Q10",
+      "category": "Specific Loan Types",
+      "question": "What specific risk controls apply to reverse mortgages, including LVR caps and third-party marketing?",
+      "expected_subsection": "Reverse mortgages",
+      "expected_paragraph": "Paragraph 68 (actuarial advice, age-related LVR caps, cautioning against waiving legal advice)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P020 (Reverse mortgages - Introduction)",
+        "P006 (Oversight and review - Introduction)",
+        "P005 (Risk appetite including residential mortgage lending - Introduction)"
+      ],
+      "graph_triples": [
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (LVR)",
+        "(Reverse mortgages - Introduction [P020]) --[ADDRESSES_CONCEPT]--> (LVR)",
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (Reverse Mortgage)",
+        "(Reverse mortgages - Introduction [P020]) --[ADDRESSES_CONCEPT]--> (Reverse Mortgage)"
+      ],
+      "answer": "As an APRA Prudential Compliance Specialist analyzing APG 223, I can confirm that reverse mortgage loans give rise to unique operational, legal, and reputational risks (including consumer protection laws affecting loan enforceability) that require appropriate measures by an ADI. \n\nBased on **Paragraph 20**, specific risk controls for reverse mortgages include:\n\n* **LVR caps:** Implementing Loan-to-Valuation Ratio (LVR) caps related to the age of the borrower (Paragraph 20(b)).\n* **Third-party marketing:** Maintaining higher levels of controls and monitoring when marketing such loans through third-party channels (Paragraph 20(e)).\n\nAdditionally, other appropriate measures an ADI may take for reverse mortgages include:\n* Assessing the need for actuarial advice (Paragraph 20(a));\n* Establishing documented procedures applicable to the regular revaluation of properties underpinning reverse mortgages (Paragraph 20(c)); and\n* Cautioning borrowers against waiving independent legal and financial advice (Paragraph 20(d)).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer is completely faithful to the retrieved context, accurately addresses all aspects of the user's question regarding reverse mortgages, LVR caps, and third-party marketing, and uses precisely the relevant regulatory rules provided in the context.",
+      "latency_s": 10.74
+    },
+    {
+      "id": "Q11",
+      "category": "SMSF Lending",
+      "question": "What unique risks arise from residential mortgage loans to self-managed superannuation funds (SMSFs)?",
+      "expected_subsection": "Loans to self-managed superannuation funds",
+      "expected_paragraph": "Paragraph 70 (limited legal recourse on default, governance forum approval)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P022 (Loans to self-managed superannuation funds - Introduction)",
+        "P005 (Risk appetite including residential mortgage lending - Introduction)"
+      ],
+      "graph_triples": [
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (SMSF)",
+        "(Loans to self-managed superannuation funds - Introduction [P022]) --[ADDRESSES_CONCEPT]--> (SMSF)"
+      ],
+      "answer": "Based on APG 223, loans to self-managed superannuation funds (SMSFs) give rise to unique **operational, legal, and reputational risks** that differ from traditional mortgage loans (Paragraph 22). Specifically, these include:\n\n* **Legal recourse:** Legal recourse in the event of default may differ from a standard mortgage, even if there are guarantees in place from other parties (Paragraph 22).\n* **Customer suitability:** Customer objectives and the suitability of the loan may be more difficult to determine (Paragraph 22).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer is completely faithful to the provided context, accurately identifying operational, legal, and reputational risks, legal recourse issues, and customer suitability challenges associated with SMSF loans. It directly and fully addresses the user question using precise information from the retrieved sections.",
+      "latency_s": 8.6
+    },
+    {
+      "id": "Q12",
+      "category": "Valuation & LVR",
+      "question": "What LVR threshold does APRA consider high LVR lending, and how should off-the-plan developer discounts be treated?",
+      "expected_subsection": "Loan-to-valuation ratios",
+      "expected_paragraph": "Paragraphs 81, 86 (LVR above 90%; developer discounts excluded from borrower deposit)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P025_1 (Loan-to-valuation ratios - Introduction)",
+        "P005 (Risk appetite including residential mortgage lending - Introduction)",
+        "P007 (Management information systems - Introduction)"
+      ],
+      "graph_triples": [
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (LVR)",
+        "(Management information systems - Introduction [P007]) --[ADDRESSES_CONCEPT]--> (LVR)",
+        "(Loan-to-valuation ratios - Introduction [P025_1]) --[ADDRESSES_CONCEPT]--> (LVR)"
+      ],
+      "answer": "Based on APG 223:\n\n* **High LVR Lending Threshold:** While APRA has not formally defined \"high LVR lending,\" its experience shows that loan-to-valuation ratios (LVRs) **above 90 per cent** (including capitalised LMI premiums or other fees) clearly expose an ADI to a higher risk of loss (**Paragraph 25**).\n* **Treatment of Off-the-Plan Developer Discounts:** Developer discounts **must not** be treated as part of the borrower\u2019s deposit for LVR calculation purposes. Such discounts reduce the sale price, but they do not increase the borrower's actual deposit (**Paragraph 25**).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer accurately reflects the context, directly answers both parts of the user question regarding the high LVR threshold and off-the-plan developer discounts, and is fully supported by the retrieved context sections.",
+      "latency_s": 13.89
+    },
+    {
+      "id": "Q13",
+      "category": "Guarantors",
+      "question": "What checks should a prudent ADI perform when a loan relies on a parental guarantor to cover deposit shortfalls?",
+      "expected_subsection": "Guarantors",
+      "expected_paragraph": "Paragraph 88 (guarantor income, creditworthiness, enforceability, pledged collateral value)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P026 (Guarantors - Introduction)",
+        "P014 (Other expectations with respect to loan origination by third parties - Introduction)",
+        "P005 (Risk appetite including residential mortgage lending - Introduction)"
+      ],
+      "graph_triples": [
+        "(Risk appetite including residential mortgage lending - Introduction [P005]) --[ADDRESSES_CONCEPT]--> (Guarantor)",
+        "(Guarantors - Introduction [P026]) --[ADDRESSES_CONCEPT]--> (Guarantor)"
+      ],
+      "answer": "Based on APG 223, when a loan includes a guarantor relationship (such as from a parent of the borrower) to cover shortfalls in minimum deposit requirements, a prudent ADI should perform the following assessments and checks (Paragraph 26):\n\n* Assess the guarantor\u2019s income.\n* Conduct independent checks on the creditworthiness of the guarantor.\n* Check the enforceability of potential claims.\n* Assess the value of any collateral pledged by the guarantor. \n\nAdditionally, a prudent ADI should consider the need for appropriate portfolio limits within its risk appetite for such lending (Paragraph 26).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer is completely faithful to the provided context, directly addresses the user's question regarding checks for parental guarantors covering deposit shortfalls, and uses the precise context section containing the exact regulatory rules.",
+      "latency_s": 23.11
+    },
+    {
+      "id": "Q14",
+      "category": "Hardship & Collections",
+      "question": "How must arrears and non-commercial hardship concessions be reported for prudential purposes?",
+      "expected_subsection": "Hardship loans and collections",
+      "expected_paragraph": "Paragraph 98 (do not freeze/re-age arrears; report non-commercial terms as restructured items)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P028_3 (Hardship loans and collections - Introduction)",
+        "P007 (Management information systems - Introduction)",
+        "P002 (Background - Introduction)"
+      ],
+      "graph_triples": [
+        "(Background - Introduction [P002]) --[ADDRESSES_CONCEPT]--> (Hardship)",
+        "(Management information systems - Introduction [P007]) --[ADDRESSES_CONCEPT]--> (Hardship)",
+        "(Hardship loans and collections - Introduction [P028_3]) --[ADDRESSES_CONCEPT]--> (Hardship)"
+      ],
+      "answer": "Based on APG 223 (Paragraph P028_3), for prudential purposes, ADIs must adhere to the following practices regarding the reporting of arrears and non-commercial hardship concessions:\n\n1. **Arrears:** Arrears must continue to accrue based on the original scheduled payments until the loan is brought back into a performing status. ADIs must not freeze or re-age loans where hardship or other similar payment concessions have been granted (Paragraph P028_3).\n2. **Hardship and Collections Decisions (Restructured Items):** Hardship or collections decisions and activities that involve ongoing concessions beyond what is normally available (i.e., non-commercial terms, such as longer interest-only periods, tenors beyond normal product offerings, capitalising interest and fees, property-sale waiting agreements, consistently renegotiating terms to avoid collections, or 'pay-what-you-can' structures) are required to be reported as **\u2018restructured items\u2019** in various APRA prudential returns (Paragraph P028_3).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 4,
+      "judge_reasoning": "The response is completely faithful to the context and directly answers the question regarding arrears and non-commercial hardship reporting. Context precision is scored 4 because while P028_3 contains the exact answer needed, P007 and P002 are broader contextual noise.",
+      "latency_s": 11.99
+    },
+    {
+      "id": "Q15",
+      "category": "Stress Testing & LMI",
+      "question": "Can Lenders Mortgage Insurance (LMI) replace loan origination due diligence, and how is stress testing governed under APS 110?",
+      "expected_subsection": "Lenders mortgage insurance",
+      "expected_paragraph": "Paragraphs 99, 106-108 (LMI does not replace due diligence; APS 110 ICAAP stress testing)",
+      "retrieval_hit": true,
+      "retrieved_parents": [
+        "P029 (Lenders mortgage insurance - Introduction)",
+        "P028_1 (Stress testing - Introduction)",
+        "P007 (Management information systems - Introduction)"
+      ],
+      "graph_triples": [
+        "(Management information systems - Introduction [P007]) --[ADDRESSES_CONCEPT]--> (LMI)",
+        "(Stress testing - Introduction [P028_1]) --[ADDRESSES_CONCEPT]--> (LMI)",
+        "(Lenders mortgage insurance - Introduction [P029]) --[ADDRESSES_CONCEPT]--> (LMI)",
+        "(Management information systems - Introduction [P007]) --[ADDRESSES_CONCEPT]--> (Stress Testing)",
+        "(Stress testing - Introduction [P028_1]) --[ADDRESSES_CONCEPT]--> (Stress Testing)",
+        "(Stress testing - Introduction [P028_1]) --[REFERENCES_STANDARD]--> (APS 110)"
+      ],
+      "answer": "Based on APG 223 and the retrieved context:\n\n1. **Can LMI replace loan origination due diligence?**\nNo. Lenders Mortgage Insurance (LMI) cannot replace loan origination due diligence. APG 223 states that LMI is not an alternative to loan origination due diligence, and while it may supplement or enhance ADI practices, it cannot replace them (**Paragraph 29**). A prudent ADI must still conduct its own independent due diligence\u2014including assessing repayment capacity, verifying minimum initial equity, ensuring reasonable debt service coverage, and assessing property value\u2014regardless of LMI coverage (**Paragraph 29**).\n\n2. **How is stress testing governed under APS 110?**\nUnder Prudential Standard APS 110 Capital Adequacy (APS 110), ADIs are required to conduct enterprise-wide stress testing as part of their internal capital planning (**Paragraph 28_1**). A core element of this requirement is the development of loss expectations on material credit exposures, such as residential mortgage lending (**Paragraph 28_1**).",
+      "faithfulness": 5,
+      "answer_relevance": 5,
+      "context_precision": 5,
+      "judge_reasoning": "The generated answer completely and accurately addresses both parts of the user question using only facts from the retrieved context. All claims are fully faithful and supported by the context, and the retrieved sections contain the exact regulatory rules needed.",
+      "latency_s": 14.36
+    }
+  ]
+}

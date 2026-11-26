@@ -1,28 +1,35 @@
 [project]
 name = "apg223-rag"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.6.0"
+description = "Hybrid Parent-Child and Neo4j Graph RAG pipeline for APRA Prudential Practice Guide APG 223"
 readme = "README.md"
-authors = [
-    { name = "Vinay Samineni", email = "saminenivinay999@gmail.com" }
-]
 requires-python = ">=3.12"
 dependencies = [
-    "google-genai>=3.6.1",
-    "langchain-text-splitters>=1.2.0",
-    "networkx>=3.7",
-    "numpy>=2.5.5",
-    "pinecone>=10.3.0",
-    "pydantic>=2.14.4",
-    "pymupdf>=2.1",
-    "python-dotenv>=1.2.4",
+    "certifi>=2026.11.20",
+    "fpdf2>=2.9.0",
+    "google-genai>=1.0.0",
+    "langchain-text-splitters>=0.3.0",
+    "neo4j>=5.28.0",
+    "numpy>=2.0.0",
+    "pinecone>=6.0.0",
+    "pydantic>=2.0.0",
+    "pymupdf>=1.25.0",
+    "python-dotenv>=1.0.0",
     "rank-bm25>=0.2.2",
-    "sentence-transformers>=6.3.0",
+    "sentence-transformers>=3.0.0",
+    "truststore>=0.10.5",
 ]
 
 [project.scripts]
-apg223-rag = "apg223_rag:main"
+apg223-ingest = "apg223_rag.cli:ingest_main"
+apg223-query = "apg223_rag.cli:query_main"
+apg223-benchmark = "apg223_rag.benchmark:run_benchmark"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
 
 [build-system]
-requires = ["uv_build>=0.13.7,<0.14.0"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

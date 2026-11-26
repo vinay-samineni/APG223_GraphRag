@@ -1,14 +1,11 @@
 import re
 from typing import List, Dict, Any, Tuple
+from apg223_rag.config import MAX_PARENT_CHARS, PARENT_OVERLAP_PARAS
 
 PARA_START_RE = re.compile(r"^(\d{1,3})\.\s+")
 
 
 def _merge_split_paragraphs(blocks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """
-    Merges consecutive BODY blocks belonging to the same APRA numbered paragraph
-    when a paragraph spans across a page break or visual block split.
-    """
     merged: List[Dict[str, Any]] = []
     for blk in blocks:
         if blk["tag"] != "BODY" or not merged or merged[-1]["tag"] != "BODY":
@@ -19,7 +16,6 @@ def _merge_split_paragraphs(blocks: List[Dict[str, Any]]) -> List[Dict[str, Any]
         starts_new_para = bool(PARA_START_RE.match(blk["text"]))
         starts_sub_bullet = bool(re.match(r"^[a-z]\)\s+", blk["text"]))
 
-        # If it does not start a new numbered paragraph or lettered sub-clause, join to previous block
         if not starts_new_para and not starts_sub_bullet and not prev["text"].endswith(":"):
             prev["text"] = f"{prev['text']} {blk['text']}"
             prev["page_end"] = blk["page"]
@@ -31,12 +27,8 @@ def _merge_split_paragraphs(blocks: List[Dict[str, Any]]) -> List[Dict[str, Any]
 def build_document_tree_and_parents(
     prose_blocks: List[Dict[str, Any]],
     tables: List[Dict[str, Any]],
-    footnotes: List[Dict[str, Any]]
+    footnotes: List[Dict[str, Any]],
 ) -> Tuple[Dict[str, Any], List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """
-    Builds the hierarchical Document Tree, creates one Parent Node per subsection,
-    and attaches matching tables and footnotes to their parent subsection.
-    """
     clean_blocks = _merge_split_paragraphs(prose_blocks)
     doc_tree: Dict[str, Dict[str, List[str]]] = {}
     parents: List[Dict[str, Any]] = []
@@ -46,16 +38,35 @@ def build_document_tree_and_parents(
     buffer_blocks: List[Dict[str, Any]] = []
     parent_counter = 1
 
-    def flush_parent(sec: str, subsec: str, blks: List[Dict[str, Any]]):
+    def _emit_parent_window(sec: str, subsec: str, window_blks: List[Dict[str, Any]], suffix: str = ""):
         nonlocal parent_counter
-        if not blks:
-            return
-        parent_id = f"P{parent_counter:03d}"
-        parent_counter += 1
+        parent_id = f"P{parent_counter:03d}{suffix}"
+        if not suffix or suffix == "_1":
+            parent_counter += 1
 
-        page_start = blks[0]["page"]
-        page_end = blks[-1].get("page_end", blks[-1]["page"])
-        page_fns = [fn["text"] for fn in footnotes if page_start <= fn["page"] <= page_end]
+        offset = 0
+        block_spans = []
+        for b in window_blks:
+            start_char = offset
+            end_char = start_char + len(b["text"])
+            block_spans.append({
+                "start_char": start_char,
+                "end_char": end_char,
+                "page": b["page"],
+                "bbox": b["bbox"],
+            })
+            offset = end_char + 2
+
+        full_content = "\n\n".join(b["text"] for b in window_blks)
+        page_start = window_blks[0]["page"]
+        page_end = window_blks[-1].get("page_end", window_blks[-1]["page"])
+
+        matched_fns = []
+        for fn in footnotes:
+            if page_start <= fn["page"] <= page_end:
+                fn_num = fn.get("footnote_num")
+                if fn_num and re.search(rf"(?<=[a-zA-Z\).]){re.escape(fn_num)}\b", full_content):
+                    matched_fns.append(fn["text"])
 
         parents.append({
             "parent_id": parent_id,
@@ -63,12 +74,44 @@ def build_document_tree_and_parents(
             "subsection": subsec,
             "page_start": page_start,
             "page_end": page_end,
-            "y_start": blks[0]["bbox"][1],
-            "content": "\n\n".join(b["text"] for b in blks),
-            "footnotes": page_fns,
-            "blocks": blks
+            "y_start": window_blks[0]["bbox"][1],
+            "char_length": len(full_content),
+            "content": full_content,
+            "footnotes": matched_fns,
+            "block_spans": block_spans,
         })
-        doc_tree.setdefault(sec, {})[subsec] = [b["text"] for b in blks]
+
+    def flush_parent(sec: str, subsec: str, blks: List[Dict[str, Any]]):
+        if not blks:
+            return
+
+        doc_tree.setdefault(sec, {}).setdefault(subsec, []).extend(b["text"] for b in blks)
+
+        total_len = sum(len(b["text"]) + 2 for b in blks)
+        if total_len <= MAX_PARENT_CHARS:
+            _emit_parent_window(sec, subsec, blks)
+            return
+
+        windows: List[List[Dict[str, Any]]] = []
+        curr_window: List[Dict[str, Any]] = []
+        curr_len = 0
+
+        for b in blks:
+            b_len = len(b["text"]) + 2
+            if curr_window and (curr_len + b_len) > MAX_PARENT_CHARS:
+                windows.append(curr_window)
+                overlap = curr_window[-PARENT_OVERLAP_PARAS:] if PARENT_OVERLAP_PARAS > 0 else []
+                curr_window = list(overlap)
+                curr_len = sum(len(x["text"]) + 2 for x in curr_window)
+
+            curr_window.append(b)
+            curr_len += b_len
+
+        if curr_window:
+            windows.append(curr_window)
+
+        for idx, win in enumerate(windows, start=1):
+            _emit_parent_window(sec, subsec, win, suffix=f"_{idx}")
 
     for blk in clean_blocks:
         if blk["tag"] == "H1":
@@ -85,11 +128,10 @@ def build_document_tree_and_parents(
 
     flush_parent(current_h1, current_h2, buffer_blocks)
 
-    # Link isolated tables to their enclosing Parent subsection
     for tbl in tables:
         t_page = tbl["page"]
         t_y0 = tbl["bbox"][1]
-        matched_parent = parents[0] if parents else None
+        matched_parent = None
 
         for p in parents:
             if p["page_start"] <= t_page <= p["page_end"]:

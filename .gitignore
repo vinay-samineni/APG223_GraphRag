@@ -16,3 +16,4 @@ build/
 
 # Generated Local Indexes (reproducible via uv run ingest.py)
 data/processed/*.pkl
+

@@ -1,20 +1,13 @@
 import re
 import pymupdf
 from typing import List, Dict, Any, Tuple
-from apg223_rag.config import (
-    START_CONTENT_PAGE,
-    HEADER_MARGIN_Y,
-    FOOTER_MARGIN_Y,
-    H1_MIN_FONT,
-    H2_MIN_FONT,
-    FOOTNOTE_MAX_FONT,
-)
+from apg223_rag.config import LAYOUT
 
 
 def _overlaps_table(
     block_bbox: Tuple[float, float, float, float],
     table_bboxes: List[Tuple[float, float, float, float]],
-    threshold: float = 0.25
+    threshold: float = 0.25,
 ) -> bool:
     bx0, by0, bx1, by1 = block_bbox
     b_area = max((bx1 - bx0) * (by1 - by0), 1e-5)
@@ -31,38 +24,26 @@ def _overlaps_table(
 def parse_prose_and_footnotes(
     pdf_path: str,
     table_bboxes_by_page: Dict[int, List[Tuple[float, float, float, float]]],
-    start_page: int = START_CONTENT_PAGE
 ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """
-    Deterministic block-level parser:
-    1. Clips top/bottom running margins via bbox coordinates.
-    2. Masks out table bounding boxes so tables never bleed into prose.
-    3. Separates footnotes (< 9.2pt) from H1, H2, and BODY blocks.
-    """
     doc = pymupdf.open(pdf_path)
     prose_blocks: List[Dict[str, Any]] = []
     footnotes: List[Dict[str, Any]] = []
 
     for page_idx in range(len(doc)):
         page_num = page_idx + 1
-        if page_num < start_page:
+        if page_num < LAYOUT.start_content_page or page_num > LAYOUT.end_content_page:
             continue
 
-        page = doc[page_idx]
         page_tables = table_bboxes_by_page.get(page_num, [])
-        blocks = page.get_text("dict", sort=True)["blocks"]
+        blocks = doc[page_idx].get_text("dict", sort=True)["blocks"]
 
         for b in blocks:
             if "lines" not in b:
                 continue
 
             bbox = tuple(round(c, 2) for c in b["bbox"])
-
-            # 1. Margin clipping (removes running "APRA" header & page number footer)
-            if bbox[1] < HEADER_MARGIN_Y or bbox[3] > FOOTER_MARGIN_Y:
+            if bbox[1] < LAYOUT.header_margin_y or bbox[3] > LAYOUT.footer_margin_y:
                 continue
-
-            # 2. Exclude table regions
             if page_tables and _overlaps_table(bbox, page_tables):
                 continue
 
@@ -85,19 +66,20 @@ def parse_prose_and_footnotes(
             dominant_size = max(set(font_sizes), key=font_sizes.count)
             is_bold = any(f & 16 for f in flags)
 
-            # 3. Separate Footnotes from Structural Hierarchy
-            if dominant_size <= FOOTNOTE_MAX_FONT:
+            if dominant_size <= LAYOUT.footnote_max_font:
+                fn_match = re.match(r"^(\d{1,2})\s+(.*)", full_text)
                 footnotes.append({
+                    "footnote_num": fn_match.group(1) if fn_match else None,
                     "page": page_num,
                     "font_size": dominant_size,
                     "bbox": list(bbox),
-                    "text": full_text
+                    "text": full_text,
                 })
                 continue
 
-            if dominant_size >= H1_MIN_FONT:
+            if dominant_size >= LAYOUT.h1_min_font:
                 tag = "H1"
-            elif H2_MIN_FONT <= dominant_size < H1_MIN_FONT and is_bold:
+            elif LAYOUT.h2_min_font <= dominant_size < LAYOUT.h1_min_font and is_bold:
                 tag = "H2"
             else:
                 tag = "BODY"
@@ -107,8 +89,55 @@ def parse_prose_and_footnotes(
                 "text": full_text,
                 "font_size": dominant_size,
                 "bbox": list(bbox),
-                "tag": tag
+                "tag": tag,
             })
 
     doc.close()
     return prose_blocks, footnotes
+
+
+def parse_glossary_terms(pdf_path: str) -> List[Dict[str, Any]]:
+    doc = pymupdf.open(pdf_path)
+    entries: List[Dict[str, Any]] = []
+
+    for page_idx in range(LAYOUT.glossary_start_page - 1, len(doc)):
+        page_num = page_idx + 1
+        blocks = doc[page_idx].get_text("dict", sort=True)["blocks"]
+        terms_col, defs_col = [], []
+
+        for b in blocks:
+            if "lines" not in b:
+                continue
+            bbox = b["bbox"]
+            if bbox[1] < LAYOUT.header_margin_y or bbox[3] > LAYOUT.footer_margin_y:
+                continue
+
+            txt = " ".join(
+                span["text"].strip()
+                for line in b["lines"]
+                for span in line["spans"]
+                if span["text"].strip()
+            )
+            if not txt or txt in {"APRA", "Glossary"} or re.fullmatch(r"\d+", txt):
+                continue
+
+            if bbox[0] < 210.0:
+                terms_col.append((bbox[1], page_num, txt))
+            else:
+                defs_col.append((bbox[1], page_num, txt))
+
+        for y_term, p_num, term_text in terms_col:
+            best_def = min(
+                defs_col,
+                key=lambda d: abs(d[0] - y_term) if d[1] == p_num else 1e6,
+                default=None,
+            )
+            if best_def and abs(best_def[0] - y_term) < 65.0:
+                entries.append({
+                    "term": term_text,
+                    "definition": best_def[2],
+                    "page": p_num,
+                })
+
+    doc.close()
+    return entries
